@@ -117,7 +117,7 @@ Please format your response clearly with headers for each question."""
                     
                     # Send to Claude API
                     message = client.messages.create(
-                        model="claude-sonnet-4-20250514",
+                        model="model="claude-haiku-4-5-20251001",",
                         max_tokens=4000,
                         messages=[
                             {
