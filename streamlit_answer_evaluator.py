@@ -23,11 +23,17 @@ st.markdown("---")
 # Sidebar for API key
 with st.sidebar:
     st.header("⚙️ Configuration")
-    api_key = st.text_input(
-        "Enter your Anthropic API Key:",
-        type="password",
-        help="Your API key will not be stored"
-    )
+    
+    # Get API key from secrets (secure)
+    try:
+        api_key = st.secrets["ANTHROPIC_API_KEY"]
+        st.success("✓ API Key loaded from secrets")
+    except:
+        api_key = st.text_input(
+            "Enter your Anthropic API Key:",
+            type="password",
+            help="Your API key will not be stored"
+        )
     
     st.markdown("---")
     st.markdown("### How to use:")
